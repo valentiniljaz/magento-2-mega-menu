@@ -13,7 +13,7 @@
 				.level-top-mega {
 					opacity: 1;
 					top: 50px;
-					visibility: visible;
+                    display: block; // VI
 				}
 			}
 			.level0.dropdown.over {
@@ -210,7 +210,7 @@
 					display: block;
 					opacity: 0;
 					top: 130%;
-					visibility: hidden;
+                    display: none; // VI
 					transition: all 300ms ease-in-out 0s;
 					-moz-transition: all 300ms ease-in-out 0s;
 					-webkit-transition: all 300ms ease-in-out 0s;
@@ -368,7 +368,7 @@
 					.level-top-mega {
 						opacity: 1;
 						top: 50px;
-						visibility: visible;
+                        display: block; // VI
 					}
 				}
 				.cat_label {
@@ -641,7 +641,7 @@
 			padding: 5px 0 25px;
 			list-style: outside none none;
 			width: 270px;
-			display: none;
+			// TODO display: none;
 			box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
 			background-color: #ffffff;
 			.level0.dropdown.hasChild {
@@ -753,7 +753,7 @@
 		.level0.over {
 			.level-top-mega {
 				opacity: 1;
-				visibility: visible;
+                display: block; // VI
 			}
 		}
 		.level0 {
@@ -878,9 +878,9 @@
 				border-style: solid;
 				position: absolute;
 				left: 100%;
-				z-index: 999;
 				opacity: 0;
-				visibility: hidden;
+                display: none;
+                z-index: 999;
 				top: 0 !important;
 				min-height: 100%;
 				padding: 0 15px;
@@ -932,7 +932,7 @@
 				}
 				.level-top-mega {
 					opacity: 1;
-					visibility: visible;
+                    display: block; // VI
 					box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 					-moz-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 					-webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
@@ -1067,6 +1067,7 @@
 		.block-title {
 			padding: 0 30px;
 			line-height: 49px;
+            cursor: pointer;
 			span {
 				font-size: 24px;
 				vertical-align: middle;
@@ -1463,7 +1464,7 @@
 			}
 		}
 	}
-	
+
 	.magicmenu {
 		.nav-desktop {
 			.level0.dropdown {
@@ -2133,7 +2134,7 @@
 						}
 					}
 				}
-			}		
+			}
 		}
 	}
 }
