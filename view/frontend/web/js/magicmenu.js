@@ -75,8 +75,11 @@ require(['jquery', 'magiccart/easing'], function($, easing){
                             if ( breakpoint > $(window).width()){
                                 body.addClass('nav-mobile-display');
                                 $('.nav-mobile').show();
-                                // VI: Always show the menu
-                                // navDesktop.hide();
+                                console.log('menu', body.hasClass('cms-home'));
+                                // VI: Always show the menu on homepage
+                                if (!body.hasClass('cms-home')) {
+                                    navDesktop.hide();
+                                }
                             } else {
                                 body.removeClass('nav-mobile-display');
                                 $('.nav-mobile').hide();
@@ -309,8 +312,11 @@ require(['jquery', 'magiccart/easing'], function($, easing){
 
                 toggleVertical: function ($vmenu) {
                     $vmenu.find('.v-title').click(function() {
-                        // VI: Never hide the mega
-                        // $vmenu.find('.nav-desktop').height('').slideToggle(400);
+                        // VI: Never hide the mega on homepage
+                        console.log();
+                        if (!$('body').hasClass('cms-home')) {
+                            $vmenu.find('.nav-desktop').height('').slideToggle(400);
+                        }
                     });
                     var catplus = $vmenu.find('.nav-desktop > .level0:hidden').not('.all-cat');
                     if (catplus.length)

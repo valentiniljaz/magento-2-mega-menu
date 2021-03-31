@@ -207,7 +207,6 @@
 					padding: 0px 15px;
 					position: absolute;
 					z-index: 99999;
-					display: block;
 					opacity: 0;
 					top: 130%;
                     display: none; // VI
@@ -641,9 +640,14 @@
 			padding: 5px 0 25px;
 			list-style: outside none none;
 			width: 270px;
-			// TODO display: none;
+			display: none; // VI
 			box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
 			background-color: #ffffff;
+
+			.cms-home & {
+				display: block; // VI
+			}
+
 			.level0.dropdown.hasChild {
 				&:hover {
 					>ul {
