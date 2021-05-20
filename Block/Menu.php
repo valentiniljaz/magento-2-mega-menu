@@ -15,7 +15,7 @@ class Menu extends \Magento\Catalog\Block\Navigation
 {
 
     const DEFAULT_CACHE_TAG = 'MAGICCART_MAGICMENU';
-    const SECOND_LEVEL_MAX_COUNT = 6;
+    const SECOND_LEVEL_MAX_COUNT = 0;
 
     /**
      * @var Category
@@ -336,7 +336,7 @@ class Menu extends \Magento\Catalog\Block\Navigation
                             foreach ($childTop as $child) {
                                 $itemPositionClassPrefixChild = $itemPositionClassPrefix . '-' . $counter;
 
-                                if ($counter === self::SECOND_LEVEL_MAX_COUNT) {
+                                if (self::SECOND_LEVEL_MAX_COUNT > 0 && $counter === self::SECOND_LEVEL_MAX_COUNT) {
                                     $url =  '<a href="' . $catTop->getUrl() . '"><span>'.__('All categories ...') . '</span></a>';
                                     $childHtml = '';
                                 } else {
@@ -348,7 +348,7 @@ class Menu extends \Magento\Catalog\Block\Navigation
                                 $desktopTmp .= '<li class="children ' . $class . '">' . $this->getImage($child) . $url . $childHtml . '</li>';
                                 $mobileTmp  .= '<li class="' . $class . '">' . $url . $childHtml . '</li>';
                                 $counter++;
-                                if ($counter > self::SECOND_LEVEL_MAX_COUNT) {
+                                if (self::SECOND_LEVEL_MAX_COUNT > 0 && $counter > self::SECOND_LEVEL_MAX_COUNT) {
                                     break;
                                 }
                             }
@@ -445,7 +445,7 @@ class Menu extends \Magento\Catalog\Block\Navigation
         $counter = 1;
         foreach($categories as $category)
         {
-            if ($counter > self::SECOND_LEVEL_MAX_COUNT) {
+            if (self::SECOND_LEVEL_MAX_COUNT > 0 && $counter > self::SECOND_LEVEL_MAX_COUNT) {
                 break;
             }
             $level = $category->getLevel();
